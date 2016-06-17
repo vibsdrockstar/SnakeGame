@@ -42,6 +42,10 @@ public void move(){
 	}
 	
 	snakePoints.set(0, newStart);
+	if(elongate){
+		snakePoints.add(last);
+		elongate=false;
+	}
 	}
 }
 public boolean snakeCollision(){
@@ -53,7 +57,7 @@ public boolean snakeCollision(){
 	}
 	return false;
 	}
-}
+
 public boolean isMoving(){
 	return isMoving;
 	}
@@ -78,6 +82,10 @@ return snakePoints.get(0).getX();
 }
 public int getY(){
 return snakePoints.get(0).getY();	
+}
+public void setElongate(boolean b){
+	elongate=b;
+	
 }
 }
 
