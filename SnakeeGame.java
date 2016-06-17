@@ -12,7 +12,7 @@ public class SnakeeGame extends Applet implements Runnable,KeyListener{
 	Thread thread;
 	Snakee snake;
 	boolean gameOver;
-	
+	Token token;
 public void init(){
 this.resize(400, 400);
 gameOver=false;
@@ -20,6 +20,7 @@ gameOver=false;
 img=createImage(400,400);
 gfx=img.getGraphics();
 snake=new Snakee();
+token=new Token(snake);
 thread=new Thread(this);
 thread.start();
 this.addKeyListener(this);
@@ -29,11 +30,14 @@ this.addKeyListener(this);
 public void paint(Graphics g ) {
 	gfx.setColor(Color.black);
 	gfx.fillRect(0, 0, 400, 400);
-	if(!gameOver)
+	if(!gameOver){
 		snake.draw(gfx);
+		token.draw(gfx);
+	}
 	else{
 		gfx.setColor(Color.RED);
 		gfx.drawString("Game Over", 180, 150);
+		gfx.drawString("Score:"+token.getScore(), 180,170);
 	}
 	snake.draw(gfx);
 	g.drawImage(img,0,0,null);
@@ -50,7 +54,8 @@ for(;;)	{
 	
     if(!gameOver){
     	snake.move();
-    	this.checkGameOver();
+         	this.checkGameOver();
+         	token.snakeCollision();
     }
 	
 	
@@ -71,6 +76,7 @@ public void checkGameOver(){
 		gameOver=true;
 	if(snake.snakeCollision()){
 		gameOver=true;
+	}
 		
 		
 	}
