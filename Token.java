@@ -22,12 +22,12 @@ public int getScore(){
 }
 public void draw(Graphics g){
 	g.setColor(Color.green);
-	g.fillRect(x, y, 6,6);
+	g.fillRect(x, y, 8,8);
 	}
 public boolean snakeCollision(){
-	int snakeX=snake.getX() +2;
-	int snakeY=snake.getY() +2;
-	if(snakeX >=x-1 && snakeY <=(y+7)){
+	int snakeX=snake.getX() +4;
+	int snakeY=snake.getY() +4;
+	if(snakeX >=x-2 && snakeY <=(y+5)){
 		changePosition();
 		score++;
 		snake.setElongate(true);
