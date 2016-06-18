@@ -8,7 +8,7 @@ public class Snakee {
 List<point> snakePoints;
 int xDir,yDir;
 boolean isMoving,elongate;
-final int STARTSIZE=20, STARTX= 150, STARTY=150;
+final int STARTSIZE=20, STARTX= 180, STARTY=180;
 
 
 public Snakee(){
@@ -26,7 +26,7 @@ public Snakee(){
 public void draw(Graphics g){
 	g.setColor(Color.white);
 	for(point p :snakePoints){
-		g.fillRect(p.getX(), p.getY(), 4, 4);
+		g.fillRect(p.getX(), p.getY(), 8, 8);
 		
 	}
 }
