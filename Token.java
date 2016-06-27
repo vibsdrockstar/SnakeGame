@@ -22,7 +22,7 @@ public int getScore(){
 }
 public void draw(Graphics g){
 	g.setColor(Color.green);
-	g.fillRect(x, y, 8,8);
+	g.fillRect(x, y, 10,10);
 	}
 public boolean snakeCollision(){
 	int snakeX=snake.getX() +4;
