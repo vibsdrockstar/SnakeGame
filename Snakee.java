@@ -24,9 +24,9 @@ public Snakee(){
 	
 	}
 public void draw(Graphics g){
-	g.setColor(Color.white);
+	g.setColor(Color.green);
 	for(point p :snakePoints){
-		g.fillRect(p.getX(), p.getY(), 8, 8);
+		g.fillRect(p.getX(), p.getY(), 10, 10);
 		
 	}
 }
